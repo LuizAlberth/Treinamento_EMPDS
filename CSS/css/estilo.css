@@ -42,3 +42,12 @@ a.botao1:hover{
     border: 5px solid darkblue;
     padding: 12px;
 }
+
+.container{
+    border: 2px solid black;
+    overflow: auto;
+}
+
+.container img{
+float:left
+}
