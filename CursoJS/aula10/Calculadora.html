@@ -6,26 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <style>
+        h1{
+            color: black;
+            border: 2px solid black;
+            width: 500px;
+            text-align: center;
+            background-color: gray;
+            border-radius: 12px;
+        }
         body{
             font: 18px Arial;
+            background-color: aqua;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         input{
             font: normal 18px Arial;
             width: 120px;
+            align-items: center;
+            background-color: bisque;
+            border-radius: 8px;
         }
+
+        div#res{
+            font-size: larger;
+            background-color: aliceblue;
+            border-radius: 12px;
+        
+        }
+
+        div#calc{
+            background-color: lightgrey;
+            width: 500px;
+            height: 600px;
+            border: 2px solid black;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+            
+        
     </style>
 </head>
 <body>
     <h1>Calculadora</h1>
-    <input type="number" name="entrada1" id="entrada1">    
+    <div id="calc">
+    <input type="number" name="entrada1" id="entrada1">  <br>  
     <input type="number" name="entrada2" id="entrada2">
     <br><br>
-    <input type="button" value="Somar" onclick="somar()">
-    <input type="button" value="Subtrair" onclick="subtrair()">
-    <input type="button" value="Multiplicar" onclick="multiplicar()">
+    <input type="button" value="Somar" onclick="somar()"> <br>
+    <input type="button" value="Subtrair" onclick="subtrair()"> <br>
+    <input type="button" value="Multiplicar" onclick="multiplicar()"> <br>
     <input type="button" value="Dividir" onclick="dividir()">
-
     <br><br>
     <div id="res">Resultado</div>
     <script>
@@ -62,5 +96,6 @@
             res.innerHTML = `A divisão entre ${n1} e ${n2} é igual a <strong>${resul}<strong>`
         }
     </script>
+    </div>
 </body>
 </html>
