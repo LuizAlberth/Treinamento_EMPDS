@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respirar 4-7-8</title>
+    <style>
+       
+        body {
+            background-color: #243447; 
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        #text {
+            font-size: 58px;
+            font-weight: 300;  
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            text-align: center;
+
+        }
+
+        .circle-container {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .circle {
+            background-color: rgba(117, 194, 204, 0.384);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            transition: all 1s ease-in-out;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="circle-container">
+            <div id="circle" class="circle"></div>
+        </div>
+        <h1 id="text">Inspirar</h1>
+    </div>
+
+    <script>
+      
+const textElement = document.getElementById('text');
+const circleElement = document.getElementById('circle');
+
+
+const inspireTime = 4000;
+const holdTime = 7000;
+const exhaleTime = 8000;
+const totalTime = inspireTime + holdTime + exhaleTime; 
+
+function breathAnimation() {
+    
+    circleElement.style.transitionDuration = '0ms'; 
+    circleElement.style.transform = 'scale(1.0)';
+    circleElement.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'; 
+
+    requestAnimationFrame(() => {
+        setTimeout(() => {
+         
+            textElement.innerText = 'Inspire';
+            circleElement.style.transitionDuration = '4000ms'; 
+            circleElement.style.transform = 'scale(3.0)';
+            circleElement.style.backgroundColor = 'rgba(12, 236, 188, 0.4)'; 
+
+            setTimeout(() => {
+               
+                textElement.innerText = 'Segure';
+                circleElement.style.backgroundColor = 'rgba(255, 255, 255, 0.2)'; 
+
+                setTimeout(() => {
+                   
+                    textElement.innerText = 'Expire';
+                    circleElement.style.transitionDuration = '8000ms'; 
+                    circleElement.style.transform = 'scale(1.0)';
+                    circleElement.style.backgroundColor = 'rgba(255, 100, 100, 0.3)'; 
+                }, holdTime);
+
+            }, inspireTime);
+        }, 50); 
+    });
+}
+
+
+breathAnimation();
+
+setInterval(breathAnimation, totalTime);
+    </script>
+</body>
+</html>
