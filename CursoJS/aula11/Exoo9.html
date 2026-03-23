@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Nacionalidade</title>
+    <style>
+        body{
+            display:flex;
+            background-color: aqua;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .sistema{
+            padding: 15px;
+            border: 2px solid burlywood;
+            background-color: lightgoldenrodyellow;
+            height: 200px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="sistema">
+    <h1>Sistema de Nacionalidade Brasileira</h1>
+    <h2>Informe o país em que você nasceu</h2>
+    Nacionalidade: <input type="text" id="nac">
+    <input type="button" value="Verificar" onclick="calcular()">
+    <br><br>
+    <div id = "res"></div>
+
+    <script>
+        function calcular(){
+           var txtp = window.document.getElementById('nac')
+           var pais = txtp.value.toLowerCase()
+           if(pais == 'brasil'){
+            res.innerHTML = 'Você é <strong>brasileiro</strong>'
+           }else{
+            res.innerHTML = 'Você é <strong>estrangeiro</strong>'
+           }
+        }
+    </script>
+    </div>
+</body>
+</html>
