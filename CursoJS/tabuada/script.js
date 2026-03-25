@@ -3,7 +3,16 @@ function tabuada(){
     var valor = Number(txtn.value)
     var res = document.getElementById('res')
 
-    res = `A tabuada de ${valor} é: <br>`
+    var conteudo = `A tabuada de ${valor} é: <br><br>`
 
-    for()
+    if(valor == 0){
+        alert("Por favor coloque um número")
+    }else{
+         for(var a = 1; a<=10;a++){
+        var val = valor*a
+        conteudo += `${valor} x ${a} = ${val} <br>`
+    }
+    res.innerHTML = conteudo
+    }
+
 }
