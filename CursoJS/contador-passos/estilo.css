@@ -26,6 +26,10 @@ section input{
     
 }
 
+section input#but:hover{
+    background-color: lightgray;
+}
+
 footer{
     color: white;
     text-align: center;
